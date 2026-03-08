@@ -1,0 +1,6 @@
+# Run outputs (per-run, not committed)
+runs/
+
+# OS files
+.DS_Store
+Thumbs.db
