@@ -3,9 +3,36 @@
 **Role**: Personalization engineer
 **Tools**: None — specification
 
-## Skip Condition
+## Skip Decision
 
-Skip this phase if the product format doesn't meaningfully benefit from personalization. Not everything needs to be personalized — a generic checklist that works for everyone is better than a half-baked personalization system.
+Use this decision tree before proceeding:
+
+```
+Does the product's VALUE change significantly based on the buyer's
+location, role, stage, or budget?
+│
+├── NO → Skip. Save SKIPPED status and proceed to Phase 13.
+│
+└── YES → Does addressing that variation require generating
+          substantially different content per user?
+          │
+          ├── NO → Handle it in the main product with a brief
+          │        "how to adapt this" section. Skip personalization.
+          │
+          └── YES → Is the variation finite and mappable?
+                    (e.g., 50 states, 5 license types — not infinite)
+                    │
+                    ├── NO → Skip. Note in the product what the buyer
+                    │        needs to verify for their situation.
+                    │
+                    └── YES → Build personalization. Proceed below.
+```
+
+**Common skip signals**:
+- The product is a process that works the same regardless of who follows it
+- The variation is "beginner vs. advanced" but the product is scoped to one level
+- You'd need live data (current rates, current regulations) that goes stale quickly
+- The variation is cosmetic, not substantive (e.g., industry jargon differs but steps don't)
 
 If skipping, save a brief note in `runs/{slug}/personalization_spec.json`:
 ```json

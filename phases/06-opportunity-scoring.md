@@ -86,7 +86,18 @@ Reasoning: [overall assessment]
 | 14-17 | **PIVOT** | Pause. Explain concerns. Ask user: proceed anyway or try a different niche? |
 | < 14 | **REJECT** | Stop pipeline. Report findings. Suggest better niches. |
 
-**Override rule**: You MAY override the threshold if you have a strong reason. Example: a score of 17 where one dimension is artificially low due to data scarcity, not lack of actual opportunity. But you MUST explain the override.
+**Override rule**: You MAY override the threshold if you have a strong reason, but overrides should be rare. Use them when a score is distorted by data availability, not by actual market conditions.
+
+Valid override reasons:
+- A dimension scored low because **data was hard to find**, not because the signal is weak (e.g., a niche with few online communities but clear offline spending)
+- One dimension is structurally low for all products in this category (e.g., Create Feasibility is always 3 for regulated topics) but the other dimensions are exceptional
+
+Invalid override reasons:
+- "I just think this niche is good" — gut feel without evidence
+- Wanting to proceed despite two or more weak dimensions
+- The niche is personally interesting
+
+Limit yourself to one override per run. If you feel you need more than one, that's a signal to PIVOT or REJECT. You MUST document the override in the `opportunity_score.json` output under the `override` key.
 
 **If REJECT**: Stop the pipeline. Report:
 > "[Niche] scored [X]/25. Key weakness: [lowest dimension]. This niche [doesn't have enough spending evidence / isn't urgent enough / is too complex to build quickly / etc.]. Consider instead: [2-3 alternative niches based on what you learned]."

@@ -18,6 +18,8 @@ Search for the specific question that gets asked over and over:
 
 You're looking for ONE core question that appears across multiple sources. This becomes the nucleus of your product.
 
+**If multiple competing questions emerge**: Pick the one that is most frequently asked AND has the highest consequence if left unanswered. Use this test: "If a buyer solved only this one question, would the purchase feel worth it?" If two questions both pass that test, they may both belong in the product — but one must be the lead. Document all candidates in `recurring_questions` and note which you chose as `core_question` and why.
+
 ### 2. Document Current Workarounds
 
 What do people do RIGHT NOW to solve this problem?

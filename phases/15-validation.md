@@ -26,10 +26,18 @@ Go through each check. Mark PASS or FAIL with a brief note.
 - [ ] Decision was CREATE
 
 **Gate 4 — Artifact Completeness (Phase 13)**
-- [ ] Main draft exists and is complete (no placeholders, no missing sections)
-- [ ] 3+ support artifacts exist
-- [ ] Package manifest exists
-- [ ] Quick start guide exists
+- [ ] Main draft exists and is complete — definition of complete:
+  - All sections from `outline.json` are present (match section titles)
+  - No `[TBD]`, `[PLACEHOLDER]`, `[TODO]`, or `[INSERT]` strings remain
+  - No section ends mid-sentence or with a note like "expand this later"
+  - Word count is within ±20% of the outline estimate
+- [ ] 3+ support artifacts exist (per `artifact_manifest.json`, `counts_toward_minimum: true`)
+- [ ] Each artifact passes its standalone test:
+  - Can be understood without reading the main product
+  - Has a title, brief description, and instructions at the top
+  - Contains no unfilled `[PLACEHOLDER]` fields
+- [ ] Package manifest exists and lists all actual files
+- [ ] Quick start guide exists and references steps that exist in the main product
 
 **Gate 5 — Launch Readiness (this gate)**
 - [ ] Target audience clearly defined
