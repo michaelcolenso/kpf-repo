@@ -9,18 +9,18 @@ Assemble everything into a buyer-facing product stack and verify completeness.
 
 ### 1. Define the Product Stack
 
-What the buyer receives:
+What the buyer receives. Pull from `artifact_manifest.json` — everything with `role: "artifact"` goes under Support Artifacts, everything with `role: "bonus"` goes under Bonuses.
 
 ```
 📦 [Product Name]
 ├── 📄 Main Product (draft_product.md → formatted)
-├── 🎁 Bonuses
-│   ├── [Bonus 1 — something that increases perceived value]
-│   └── [Bonus 2 — something that addresses a secondary pain]
-├── 🔧 Support Artifacts
+├── 🔧 Support Artifacts  ← core working tools built from the product content
 │   ├── [Artifact 1]
 │   ├── [Artifact 2]
 │   └── [Artifact 3+]
+├── 🎁 Bonuses  ← extras addressing adjacent needs (max 2; see Phase 11 for definition)
+│   ├── [Bonus 1 — increases perceived value]
+│   └── [Bonus 2 — addresses secondary pain] (optional)
 └── 📋 Quick Start Guide (1-page "do this first" instructions)
 ```
 

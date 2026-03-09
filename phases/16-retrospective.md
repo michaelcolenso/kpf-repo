@@ -24,6 +24,10 @@ Document what worked, what didn't, and update cross-run memory files so future r
 
 ### 3. Update Cross-Run Memory
 
+**Bootstrap note**: On the first run, the memory files (`winning_niches.json`, `failed_niches.json`, `search_patterns.json`, `format_performance.json`) will be empty arrays (`[]`). That's expected. Simply append your entry as the first element. On subsequent runs, append to whatever is already there — do not overwrite the file.
+
+
+
 **If the pipeline completed successfully (all gates passed):**
 
 Append to `memory/winning_niches.json`:

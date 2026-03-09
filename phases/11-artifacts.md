@@ -48,9 +48,28 @@ Examples:
 - `artifact-template-panel-application-tracker.md`
 - `artifact-script-follow-up-email.md`
 
+### Bonuses vs. Support Artifacts
+
+**Support artifacts** are the core working tools built directly from the product's main content — checklists, trackers, scripts, calculators. They're the "do the thing" materials.
+
+**Bonuses** are extras that increase perceived value by addressing adjacent needs or secondary pains. A bonus might be:
+- A resource you reference repeatedly in the product (e.g., a curated list of state licensing boards)
+- A complementary template for a step BEFORE or AFTER the product's scope
+- A swipe file of examples (e.g., real panels, real timelines, real scripts from other practitioners)
+- A companion "quick wins" guide for buyers who are overwhelmed and need a fast result
+
+**Rules**:
+- Bonuses count toward the 3+ artifact minimum in GATE 4 only if they are immediately usable standalone documents
+- Limit to 2 bonuses per product — more than that devalues everything
+- A bonus should NOT be something you removed from the main product to pad the package; it should add new value
+
+Name bonuses with the prefix `bonus-` instead of `artifact-`:
+- `bonus-resource-state-licensing-boards.md`
+- `bonus-swipe-panel-timeline-examples.md`
+
 ## Output
 
-Save each artifact as a separate file in `runs/{slug}/artifacts/`.
+Save each artifact and bonus as a separate file in `runs/{slug}/artifacts/`.
 
 Save `runs/{slug}/artifact_manifest.json`:
 
@@ -59,28 +78,45 @@ Save `runs/{slug}/artifact_manifest.json`:
   "artifacts": [
     {
       "filename": "artifact-checklist-credentialing-documents.md",
+      "role": "artifact",
       "type": "checklist",
       "title": "Required Documents Checklist",
       "description": "Every document you need before starting your first panel application",
-      "standalone": true
+      "standalone": true,
+      "counts_toward_minimum": true
     },
     {
       "filename": "artifact-template-panel-tracker.md",
+      "role": "artifact",
       "type": "template",
       "title": "Panel Application Tracker",
       "description": "Track every application's status, dates, and follow-up schedule",
-      "standalone": true
+      "standalone": true,
+      "counts_toward_minimum": true
     },
     {
       "filename": "artifact-script-follow-up-email.md",
+      "role": "artifact",
       "type": "script",
       "title": "Follow-Up Email Scripts",
       "description": "Copy-paste emails for checking application status at 30, 60, and 90 days",
-      "standalone": true
+      "standalone": true,
+      "counts_toward_minimum": true
+    },
+    {
+      "filename": "bonus-resource-state-licensing-boards.md",
+      "role": "bonus",
+      "type": "resource_list",
+      "title": "State Licensing Board Directory",
+      "description": "Direct links and contact info for all 50 state insurance licensing boards",
+      "standalone": true,
+      "counts_toward_minimum": true
     }
   ],
-  "total_count": 3,
-  "types_covered": ["checklist", "template", "script"]
+  "core_artifact_count": 3,
+  "bonus_count": 1,
+  "total_count": 4,
+  "types_covered": ["checklist", "template", "script", "resource_list"]
 }
 ```
 
